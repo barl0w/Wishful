@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		93EE10141B8BE86A00BC5CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE10131B8BE86A00BC5CBD /* AppDelegate.swift */; };
-		93EE10161B8BE86A00BC5CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE10151B8BE86A00BC5CBD /* ViewController.swift */; };
+		93EE10161B8BE86A00BC5CBD /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE10151B8BE86A00BC5CBD /* WishListViewController.swift */; };
 		93EE10191B8BE86A00BC5CBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE10171B8BE86A00BC5CBD /* Main.storyboard */; };
 		93EE101C1B8BE86A00BC5CBD /* Wishful.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93EE101A1B8BE86A00BC5CBD /* Wishful.xcdatamodeld */; };
 		93EE101E1B8BE86A00BC5CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EE101D1B8BE86A00BC5CBD /* Assets.xcassets */; };
 		93EE10211B8BE86A00BC5CBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE101F1B8BE86A00BC5CBD /* LaunchScreen.storyboard */; };
+		93EE10291B8BED2300BC5CBD /* AddWishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE10281B8BED2300BC5CBD /* AddWishViewController.swift */; };
+		93EE102B1B8BED6200BC5CBD /* WishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE102A1B8BED6200BC5CBD /* WishDetailViewController.swift */; };
+		93EE102E1B8BF1CA00BC5CBD /* Wish+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE102C1B8BF1CA00BC5CBD /* Wish+CoreDataProperties.swift */; };
+		93EE102F1B8BF1CA00BC5CBD /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE102D1B8BF1CA00BC5CBD /* Wish.swift */; };
+		93F1B4AA1BA136DB00D6D278 /* Camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F1B4A91BA136DB00D6D278 /* Camera_icon.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		93EE10101B8BE86A00BC5CBD /* Wishful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wishful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EE10131B8BE86A00BC5CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93EE10151B8BE86A00BC5CBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93EE10151B8BE86A00BC5CBD /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		93EE10181B8BE86A00BC5CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93EE101B1B8BE86A00BC5CBD /* Wishful.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wishful.xcdatamodel; sourceTree = "<group>"; };
 		93EE101D1B8BE86A00BC5CBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93EE10201B8BE86A00BC5CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93EE10221B8BE86A00BC5CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93EE10281B8BED2300BC5CBD /* AddWishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWishViewController.swift; sourceTree = "<group>"; };
+		93EE102A1B8BED6200BC5CBD /* WishDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishDetailViewController.swift; sourceTree = "<group>"; };
+		93EE102C1B8BF1CA00BC5CBD /* Wish+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Wish+CoreDataProperties.swift"; path = "../Wish+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93EE102D1B8BF1CA00BC5CBD /* Wish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wish.swift; path = ../Wish.swift; sourceTree = "<group>"; };
+		93F1B4A91BA136DB00D6D278 /* Camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +66,14 @@
 		93EE10121B8BE86A00BC5CBD /* Wishful */ = {
 			isa = PBXGroup;
 			children = (
-				93EE10131B8BE86A00BC5CBD /* AppDelegate.swift */,
-				93EE10151B8BE86A00BC5CBD /* ViewController.swift */,
+				93F1B4A91BA136DB00D6D278 /* Camera_icon.png */,
+				93EE10151B8BE86A00BC5CBD /* WishListViewController.swift */,
+				93EE10281B8BED2300BC5CBD /* AddWishViewController.swift */,
+				93EE102A1B8BED6200BC5CBD /* WishDetailViewController.swift */,
 				93EE10171B8BE86A00BC5CBD /* Main.storyboard */,
+				93EE10131B8BE86A00BC5CBD /* AppDelegate.swift */,
+				93EE102C1B8BF1CA00BC5CBD /* Wish+CoreDataProperties.swift */,
+				93EE102D1B8BF1CA00BC5CBD /* Wish.swift */,
 				93EE101D1B8BE86A00BC5CBD /* Assets.xcassets */,
 				93EE101F1B8BE86A00BC5CBD /* LaunchScreen.storyboard */,
 				93EE10221B8BE86A00BC5CBD /* Info.plist */,
@@ -125,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93EE10211B8BE86A00BC5CBD /* LaunchScreen.storyboard in Resources */,
+				93F1B4AA1BA136DB00D6D278 /* Camera_icon.png in Resources */,
 				93EE101E1B8BE86A00BC5CBD /* Assets.xcassets in Resources */,
 				93EE10191B8BE86A00BC5CBD /* Main.storyboard in Resources */,
 			);
@@ -137,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93EE10161B8BE86A00BC5CBD /* ViewController.swift in Sources */,
+				93EE10161B8BE86A00BC5CBD /* WishListViewController.swift in Sources */,
+				93EE10291B8BED2300BC5CBD /* AddWishViewController.swift in Sources */,
+				93EE102B1B8BED6200BC5CBD /* WishDetailViewController.swift in Sources */,
 				93EE10141B8BE86A00BC5CBD /* AppDelegate.swift in Sources */,
+				93EE102F1B8BF1CA00BC5CBD /* Wish.swift in Sources */,
+				93EE102E1B8BF1CA00BC5CBD /* Wish+CoreDataProperties.swift in Sources */,
 				93EE101C1B8BE86A00BC5CBD /* Wishful.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +273,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wishful/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.teamapps.Wishful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -264,6 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wishful/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.teamapps.Wishful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +311,7 @@
 				93EE10271B8BE86A00BC5CBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

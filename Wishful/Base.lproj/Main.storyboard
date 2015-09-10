@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6D3-UC-8WI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Jlb-JU-uK1">
+            <objects>
+                <navigationController id="6D3-UC-8WI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pIg-Qp-db8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xyK-zI-VuP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ra3-Gg-QaE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-363" y="383"/>
+        </scene>
+        <!--Wishful-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="WishListViewController" customModule="Wishful" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +33,183 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZU9-kX-Sc2">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZU9-kX-Sc2" secondAttribute="trailing" id="Jhs-Fq-itV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZU9-kX-Sc2" secondAttribute="bottom" id="Ntt-4f-lqD"/>
+                            <constraint firstItem="ZU9-kX-Sc2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="f68-DU-bAX"/>
+                            <constraint firstItem="ZU9-kX-Sc2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qfA-7e-u1d"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Wishful" id="wty-ON-JX5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ipT-9Q-cVS">
+                            <connections>
+                                <segue destination="NIq-Bv-luV" kind="show" identifier="addWishSegue" id="jiD-hq-gbR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ZU9-kX-Sc2" id="ReW-XS-Ze8"/>
+                        <segue destination="VIu-Cg-fyJ" kind="show" identifier="wishDetailSegue" id="AQY-Wo-4cw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="383"/>
+        </scene>
+        <!--New Wishful-->
+        <scene sceneID="am5-gg-0J3">
+            <objects>
+                <viewController id="NIq-Bv-luV" customClass="AddWishViewController" customModule="Wishful" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Der-dX-PB0"/>
+                        <viewControllerLayoutGuide type="bottom" id="8kW-me-w4s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OwK-c7-LfD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNJ-YQ-tgC">
+                                <rect key="frame" x="30" y="98" width="540" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Wish Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Icn-xH-f1h">
+                                <rect key="frame" x="30" y="150" width="540" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOu-hw-YbA">
+                                <rect key="frame" x="30" y="200" width="540" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Info Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PF2-ja-mhC">
+                                <rect key="frame" x="30" y="252" width="540" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textField>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="AQR-o3-TTo">
+                                <rect key="frame" x="180" y="302" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="8QE-Qw-fs3"/>
+                                    <constraint firstAttribute="height" constant="240" id="hqe-4Z-qjc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PF2-ja-mhC" firstAttribute="centerX" secondItem="OwK-c7-LfD" secondAttribute="centerX" id="2DZ-ad-fF2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Icn-xH-f1h" secondAttribute="trailing" constant="10" id="2ox-en-L13"/>
+                            <constraint firstItem="Icn-xH-f1h" firstAttribute="top" secondItem="mNJ-YQ-tgC" secondAttribute="bottom" constant="20" id="5R9-Hm-Fz7"/>
+                            <constraint firstItem="KOu-hw-YbA" firstAttribute="centerX" secondItem="OwK-c7-LfD" secondAttribute="centerX" id="EME-UP-ooD"/>
+                            <constraint firstItem="AQR-o3-TTo" firstAttribute="centerX" secondItem="OwK-c7-LfD" secondAttribute="centerX" id="Fjs-Qi-7hK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KOu-hw-YbA" secondAttribute="trailing" constant="10" id="LeX-Ib-CK4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mNJ-YQ-tgC" secondAttribute="trailing" constant="10" id="M54-FC-Bqh"/>
+                            <constraint firstItem="PF2-ja-mhC" firstAttribute="top" secondItem="KOu-hw-YbA" secondAttribute="bottom" constant="20" id="ROb-d1-UH3"/>
+                            <constraint firstItem="AQR-o3-TTo" firstAttribute="top" secondItem="PF2-ja-mhC" secondAttribute="bottom" constant="20" id="X4z-oL-oRh"/>
+                            <constraint firstItem="KOu-hw-YbA" firstAttribute="top" secondItem="Icn-xH-f1h" secondAttribute="bottom" constant="20" id="YJ7-YN-vVl"/>
+                            <constraint firstItem="mNJ-YQ-tgC" firstAttribute="top" secondItem="Der-dX-PB0" secondAttribute="bottom" constant="34" id="Zk4-08-lMQ"/>
+                            <constraint firstItem="Icn-xH-f1h" firstAttribute="centerX" secondItem="OwK-c7-LfD" secondAttribute="centerX" id="eiH-E8-eIj"/>
+                            <constraint firstItem="mNJ-YQ-tgC" firstAttribute="centerX" secondItem="OwK-c7-LfD" secondAttribute="centerX" id="fVM-LF-4ON"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PF2-ja-mhC" secondAttribute="trailing" constant="10" id="i4C-Q2-Eef"/>
+                            <constraint firstItem="Icn-xH-f1h" firstAttribute="leading" secondItem="OwK-c7-LfD" secondAttribute="leadingMargin" constant="10" id="lPc-Xb-LeL"/>
+                            <constraint firstItem="PF2-ja-mhC" firstAttribute="leading" secondItem="OwK-c7-LfD" secondAttribute="leadingMargin" constant="10" id="s5R-Yu-FaP"/>
+                            <constraint firstItem="mNJ-YQ-tgC" firstAttribute="leading" secondItem="OwK-c7-LfD" secondAttribute="leadingMargin" constant="10" id="sMY-Dn-epT"/>
+                            <constraint firstItem="KOu-hw-YbA" firstAttribute="leading" secondItem="OwK-c7-LfD" secondAttribute="leadingMargin" constant="10" id="zHs-KC-Ukl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Wishful" id="9Xh-ac-0Qe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tbg-hJ-bou">
+                            <connections>
+                                <action selector="cancelTapped:" destination="NIq-Bv-luV" id="biK-fM-1MV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9bx-P3-5XU">
+                            <connections>
+                                <action selector="saveTapped:" destination="NIq-Bv-luV" id="NRV-rq-ntn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="Icn-xH-f1h" id="4cE-6e-B0L"/>
+                        <outlet property="infoTextField" destination="PF2-ja-mhC" id="78w-Tp-Y3a"/>
+                        <outlet property="wishImage" destination="AQR-o3-TTo" id="U1s-gP-24x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9j5-9b-HLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021" y="62"/>
+        </scene>
+        <!--Wish Detail View Controller-->
+        <scene sceneID="JXJ-t1-goW">
+            <objects>
+                <viewController id="VIu-Cg-fyJ" customClass="WishDetailViewController" customModule="Wishful" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QV7-vY-2Bf"/>
+                        <viewControllerLayoutGuide type="bottom" id="otA-sB-YlY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9eB-6Q-Izj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-5a-Gf6">
+                                <rect key="frame" x="30" y="103" width="540" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yj-JQ-daq">
+                                <rect key="frame" x="30" y="158" width="540" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NMK-Oo-j6s">
+                                <rect key="frame" x="180" y="210" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="eWN-Ki-plK"/>
+                                    <constraint firstAttribute="width" constant="240" id="i8N-JQ-T4Z"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Yj-JQ-daq" firstAttribute="centerX" secondItem="9eB-6Q-Izj" secondAttribute="centerX" id="0uU-eV-edY"/>
+                            <constraint firstItem="NMK-Oo-j6s" firstAttribute="centerX" secondItem="9eB-6Q-Izj" secondAttribute="centerX" id="Ako-e8-Uvt"/>
+                            <constraint firstItem="lGz-5a-Gf6" firstAttribute="centerX" secondItem="9eB-6Q-Izj" secondAttribute="centerX" id="CsI-4W-uEJ"/>
+                            <constraint firstItem="NMK-Oo-j6s" firstAttribute="top" secondItem="0Yj-JQ-daq" secondAttribute="bottom" constant="20" id="Pwu-73-exj"/>
+                            <constraint firstItem="lGz-5a-Gf6" firstAttribute="top" secondItem="QV7-vY-2Bf" secondAttribute="bottom" constant="39" id="TRV-hd-WCG"/>
+                            <constraint firstItem="NMK-Oo-j6s" firstAttribute="centerX" secondItem="9eB-6Q-Izj" secondAttribute="centerX" id="W71-RM-FVA"/>
+                            <constraint firstItem="0Yj-JQ-daq" firstAttribute="leading" secondItem="9eB-6Q-Izj" secondAttribute="leadingMargin" constant="10" id="a31-9Z-XzQ"/>
+                            <constraint firstItem="0Yj-JQ-daq" firstAttribute="top" secondItem="lGz-5a-Gf6" secondAttribute="bottom" constant="23" id="aZV-Fk-ikb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lGz-5a-Gf6" secondAttribute="trailing" constant="10" id="bhQ-gt-6Gl"/>
+                            <constraint firstItem="lGz-5a-Gf6" firstAttribute="centerX" secondItem="9eB-6Q-Izj" secondAttribute="centerX" id="eG5-1C-n8h"/>
+                            <constraint firstItem="0Yj-JQ-daq" firstAttribute="centerX" secondItem="9eB-6Q-Izj" secondAttribute="centerX" id="eL4-7L-ERD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Yj-JQ-daq" secondAttribute="trailing" constant="10" id="nIB-Kz-bvx"/>
+                            <constraint firstItem="lGz-5a-Gf6" firstAttribute="leading" secondItem="9eB-6Q-Izj" secondAttribute="leadingMargin" constant="10" id="yOj-ps-SXQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="wishDescription" destination="lGz-5a-Gf6" id="fhx-2h-Ayh"/>
+                        <outlet property="wishImage" destination="NMK-Oo-j6s" id="grV-dy-6CR"/>
+                        <outlet property="wishInfo" destination="0Yj-JQ-daq" id="REB-rC-Dm9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggC-7Q-S1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021" y="736"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera_icon.png" width="332" height="293"/>
+    </resources>
 </document>
